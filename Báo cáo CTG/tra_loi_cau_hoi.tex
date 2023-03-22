@@ -1,0 +1,364 @@
+\documentclass[13pt]{report}
+\usepackage[utf8]{vietnam}
+\usepackage[T5]{fontenc}
+\usepackage{indentfirst}
+\usepackage[portrait,left=3.50cm, right=2.50cm, top=2.00cm, bottom=2.00cm]{geometry}
+\usepackage[fontsize=13pt]{scrextend}
+\usepackage{graphicx}
+%\usepackage{amsmath}
+\usepackage[linesnumbered,ruled]{algorithm2e}
+%\usepackage{algorithm,algorithmic}
+\usepackage[ruled]{algorithm2e}
+\usepackage{mathrsfs} 
+\usepackage{amsfonts}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[pdftex, % Sử dụng PDF TeX
+bookmarks=true, % Tạo bookmarks trong tập tin PDF
+pdfencoding=auto, % Tự động điều chỉnh encoding của PDF
+unicode=true, % Sử dụng Unicode
+pdffitwindow=true, % Fit cho vừa cửa sổ
+pdfstartview={FitH}, % Zoom file PDF cho vừa khít với nội dung
+]{hyperref}
+
+\usepackage{longtable}
+\usepackage[intlimits]{amsmath}
+\usepackage{amsmath, amsthm, amssymb,latexsym,amscd,amsfonts,enumerate}
+\usepackage{fancyhdr}
+\usepackage{fancybox,graphicx}
+\usepackage[final]{pdfpages}
+\usepackage{caption}
+\pagestyle{fancy}
+\usepackage{tikz}
+\usepackage[noend]{algpseudocode}
+\usepackage{algpseudocode}
+\usepackage[ruled]{algorithm2e}
+%\usepackage{subfig}
+\usepackage{listings}
+%\usepackage[comma,authoryear,round]
+%\usepackage{natbib}
+\lstset{language=Python}
+%\SetAlFnt{\large}
+%\SetAlCapFnt{\Large}
+%\SetAlCapNameFnt{\Large}
+\usepackage[titletoc,toc,page]{appendix}
+\usepackage{ upgreek }
+\usepackage{bm}
+% \newcounter{example}[section]
+% \newenvironment{example}[1][]{\refstepcounter{example}\par\medskip
+%   \noindent \textbf{Ví dụ~\theexample. #1} \rmfamily}{{\medskip}
+%\newtheorem{dn}{Định nghĩa}[section]
+
+%\newtheorem{tc}[dn]{Tính chất}
+
+%\newtheorem{dl}[dn]{Định lí}
+
+%\newtheorem{md}{Mệnh đề}[section]
+
+%\newtheorem{bd}[dn]{Bổ đề}
+
+%\newtheorem{hq}[dn]{Hệ quả}
+
+%\newtheorem{nx}[dn]{Nhận xét}
+
+%\newtheorem{vd}{Ví dụ}[section]
+
+\numberwithin{equation}{section} 
+
+
+\usetikzlibrary{calc}
+\usepackage{titlesec}
+
+\titleformat{\chapter}
+{\filcenter\normalfont\Large\bfseries}
+{\MakeUppercase{\chaptertitlename}~\thechapter.} {0.5em} {}
+
+%\usepackage{sectsty}
+%\chapterfont{\centering}
+%\renewcommand\cftpartfont{\LARGE\bfseries}
+%\partfont{\Huge}
+\fancyhf{}
+\rhead{NHÓM 16}
+\lhead{BÀI TẬP LỚN CHUỖI THỜI GIAN}
+\cfoot{\thepage}
+\newtheorem{definition}{Định nghĩa}[chapter]
+\renewcommand{\algorithmcfname}{Thuật toán}
+\renewcommand{\listalgorithmcfname}{Danh sách thuật toán}
+\renewcommand{\baselinestretch}{1.5}
+
+
+\DeclareMathOperator*{\argmin}{argmin}
+
+\setlength{\parindent}{1cm} % Set khoảng cách thụt đầu dòng mỗi đoạn
+\usepackage{epigraph}
+
+\usepackage{tabularx}
+
+\usepackage{ragged2e}
+\usepackage{float}
+\usepackage{caption}
+
+\usepackage[vietnamese]{babel}
+\AtBeginDocument{\renewcommand{\contentsname}{MỤC LỤC}}
+\AtBeginDocument{\renewcommand{\listfigurename}{DANH MỤC HÌNH VẼ}}
+\AtBeginDocument{\renewcommand{\listtablename}{DANH MỤC BẢNG BIỂU}}
+\AtBeginDocument{\renewcommand{\figurename}{{\fontsize{12pt}{0pt}\selectfont \bfseries Hình}}}
+\AtBeginDocument{\renewcommand{\thefigure}{{\thechapter.\arabic{figure}}}}
+\usepackage[font=bf]{caption}
+\captionsetup[figure]{labelsep=space}
+
+\renewcommand{\tablename}{{\fontsize{12pt}{0pt}\selectfont \bfseries Bảng}}
+\renewcommand{\thetable}{{\thechapter.\arabic{table}}}
+\captionsetup[table]{labelsep=space}
+
+\RequirePackage{listings}
+\renewcommand\lstlistlistingname{Danh sách codes}
+\definecolor{darkgray}{rgb}{0.66, 0.66, 0.66}
+\definecolor{darkorange}{rgb}{1.0, 0.55, 0.0}
+\definecolor{gray}{rgb}{0.97,0.97,0.99}
+\definecolor{teal}{rgb}{0.0, 0.5, 0.5}
+\definecolor{comment}{rgb}{0.6, 0, 0.9}
+\lstdefinestyle{mystyle}{
+	language = Python,
+	backgroundcolor=\color{gray},
+	commentstyle=\color{comment},
+	keywordstyle=\bfseries\color{darkorange},
+	numberstyle=\scriptsize\color{darkgray},
+	stringstyle=\color{teal},
+	basicstyle=\scriptsize\ttfamily,%\linespread{1}
+	breakatwhitespace=false,
+	breaklines=true,
+	captionpos=t,
+	keepspaces=false,
+	numbers=left,
+	numbersep=3pt,
+	showspaces=false,
+	showstringspaces=false,
+	showtabs=false,
+	tabsize=4
+}
+
+\lstset{style=mystyle,
+literate=%
+{À}{{\`A}}1
+{Ả}{{\h{A}}}1
+{Ã}{{\~A}}1
+{Á}{{\'A}}1
+{Ạ}{{\d{A}}}1
+{Ă}{{\Abreve}}1
+{Ằ}{{\`\Abreve}}1
+{Ẳ}{{\h\Abreve}}1
+{Ẵ}{{\~\Abreve}}1
+{Ắ}{{\'\Abreve}}1
+{Ặ}{{\d\Abreve}}1
+{Â}{{\Acircumflex}}1
+{Ầ}{{\'\Acircumflex}}1
+{Ẩ}{{\h\Acircumflex}}1
+{Ẫ}{{\~\Acircumflex}}1
+{Ấ}{{\'\Acircumflex}}1
+{Ậ}{{\d\Acircumflex}}1
+{Ẩ}{{\h\Acircumflex}}1
+{Đ}{{\DJ}}1
+{È}{{\`E}}1
+{Ẻ}{{\h{E}}}1
+{Ẽ}{{\~E}}1
+{É}{{\'E}}1
+{Ẹ}{{\d{E}}}1
+{Ê}{{\Ecircumflex}}1
+{Ề}{{\`\Ecircumflex}}1
+{Ể}{{\h\Ecircumflex}}1
+{Ễ}{{\~\Ecircumflex}}1
+{Ế}{{\'\Ecircumflex}}1
+{Ệ}{{\d\Ecircumflex}}1
+{Ì}{{\`I}}1
+{Ỉ}{{\h{I}}}1
+{Ĩ}{{\~I}}1
+{Í}{{\'I}}1
+{Ị}{{\d{I}}}1
+{Ò}{{\`O}}1
+{Ỏ}{{\h{O}}}1
+{Õ}{{\~O}}1
+{Ó}{{\'O}}1
+{Ọ}{{\d{O}}}1
+{Ô}{{\Ocircumflex}}1
+{Ồ}{{\`\Ocircumflex}}1
+{Ổ}{{\h\Ocircumflex}}1
+{Ỗ}{{\~\Ocircumflex}}1
+{Ố}{{\'\Ocircumflex}}1
+{Ộ}{{\d\Ocircumflex}}1
+{Ơ}{{\Ohorn}}1
+{Ờ}{{\`\Ohorn}}1
+{Ở}{{\h\Ohorn}}1
+{Ỡ}{{\~\Ohorn}}1
+{Ớ}{{\'\Ohorn}}1
+{Ợ}{{\d\Ohorn}}1
+{Ù}{{\`U}}1
+{Ủ}{{\h{U}}}1
+{Ũ}{{\~U}}1
+{Ú}{{\'U}}1
+{Ụ}{{\d{U}}}1
+{Ư}{{\Uhorn}}1
+{Ừ}{{\`\Uhorn}}1
+{Ử}{{\h\Uhorn}}1
+{Ữ}{{\~\Uhorn}}1
+{Ứ}{{\'\Uhorn}}1
+{Ự}{{\d\Uhorn}}1
+{Ỳ}{{\`Y}}1
+{Ỷ}{{\h{Y}}}1
+{Ỹ}{{\~Y}}1
+{Ý}{{\'Y}}1
+{Ỵ}{{\d{Y}}}1
+{à}{{\`a}}1
+{ả}{{\h{a}}}1
+{ã}{{\~a}}1
+{á}{{\'a}}1
+{ạ}{{\d{a}}}1
+{ă}{{\abreve}}1
+{ằ}{{\`\abreve}}1
+{ẳ}{{\h\abreve}}1
+{ẵ}{{\~\abreve}}1
+{ắ}{{\'\abreve}}1
+{ặ}{{\d\abreve}}1
+{â}{{\acircumflex}}1
+{ầ}{{\`\acircumflex}}1
+{ẩ}{{\h\acircumflex}}1
+{ẫ}{{\~\acircumflex}}1
+{ấ}{{\'\acircumflex}}1
+{ậ}{{\d\acircumflex}}1
+{ẩ}{{\h\acircumflex}}1
+{đ}{{\dj}}1
+{è}{{\`e}}1
+{ẻ}{{\h{e}}}1
+{ẽ}{{\~e}}1
+{é}{{\'e}}1
+{ẹ}{{\d{e}}}1
+{ê}{{\ecircumflex}}1
+{ề}{{\`\ecircumflex}}1
+{ể}{{\h\ecircumflex}}1
+{ễ}{{\~\ecircumflex}}1
+{ế}{{\'\ecircumflex}}1
+{ệ}{{\d\ecircumflex}}1
+{ì}{{\`i}}1
+{ỉ}{{\h{i}}}1
+{ĩ}{{\~i}}1
+{í}{{\'i}}1
+{ị}{{\d{i}}}1
+{ò}{{\`o}}1
+{ỏ}{{\h{o}}}1
+{õ}{{\~o}}1
+{ó}{{\'o}}1
+{ọ}{{\d{o}}}1
+{ô}{{\ocircumflex}}1
+{ồ}{{\`\ocircumflex}}1
+{ổ}{{\h\ocircumflex}}1
+{ỗ}{{\~\ocircumflex}}1
+{ố}{{\'\ocircumflex}}1
+{ộ}{{\d\ocircumflex}}1
+{ơ}{{\ohorn}}1
+{ờ}{{\`\ohorn}}1
+{ở}{{\h\ohorn}}1
+{ỡ}{{\~\ohorn}}1
+{ớ}{{\'\ohorn}}1
+{ợ}{{\d\ohorn}}1
+{ù}{{\`u}}1
+{ủ}{{\h{u}}}1
+{ũ}{{\~u}}1
+{ú}{{\'u}}1
+{ụ}{{\d{u}}}1
+{ư}{{\uhorn}}1
+{ừ}{{\`\uhorn}}1
+{ử}{{\h\uhorn}}1
+{ữ}{{\~\uhorn}}1
+{ứ}{{\'\uhorn}}1
+{ự}{{\d\uhorn}}1
+{ỳ}{{\`y}}1
+{ỷ}{{\h{y}}}1
+{ỹ}{{\~y}}1
+{ý}{{\'y}}1
+{ỵ}{{\d{y}}}1
+}
+\renewcommand{\lstlistingname}{Mã}
+
+\lstset{inputencoding=utf8}
+
+
+\begin{document}
+	\fontsize{13pt}{18pt}\selectfont    %Lệnh thay đổi cỡ chữ thành cỡ 14, cỡ dòng 18 (theo quy chuẩn của Khóa Luận TN).
+\begin{center}
+    \huge{\textbf{Trả lời câu hỏi}}
+\end{center}
+ 
+\begin{enumerate}
+    \item (NGUYEN HAI YEN 20195944)\textbf{ Các bạn giải thích giúp mình cách biểu thức hoạt động của Forget/Input/Output Gate và Cell State ạ} \\
+    Trả lời: 
+    \begin{itemize}
+        \item Forget Gate (Cổng quên): Cổng quyết định xem thông tin nào chúng ta sẽ cho phép đi qua ô trạng thái. Đầu tiên nó nhận đầu vào là 2 giá trị $h_t$  và $x_t$ và trả về một giá trị nằm trong khoảng 0 và 1 cho mỗi giá trị của ô trạng thái $C_{t-1}$. Nếu giá trị bằng 1 thể hiện ‘giữ toàn bộ thông tin’ và ngược lại bằng 0 thể hiện ‘bỏ qua toàn bộ chúng’.
+        \item Input Gate (Cổng vào): Cổng vào giúp quyết định bao nhiêu lượng thông tin đầu vào sẽ ảnh hưởng đến trạng thái mới. Quyết định bằng cách thông qua đặc điểm của hàm sigmoid (đầu ra nằm trong khoảng [0,1]), như vậy khi một vector thông tin đi qua đây, nếu nhân với 0, vector sẽ bị triệt tiêu hoàn toàn. Nếu nhân với 1, hầu hết thông tin sẽ được giữ lại.
+        \item Output Gate (Cổng ra): Cổng điều chỉnh lượng thông tin có thể ra ngoài $y_t$ và lượng thông tin truyền tới trạng thái tiếp theo.
+        \item Cell State: (Ô trạng thái) là một dạng băng chuyền chạy thẳng xuyên suốt toàn bộ chuỗi với chỉ một vài tương tác tuyến tính nhỏ giúp cho thông tin có thể truyền dọc theo đồ thị mạng nơ ron ổn định. Cell state sẽ mang thông tin nào quan trọng truyền đi xa hơn và sẽ được dùng khi cần.
+    \end{itemize}
+
+    \item (NGUYEN THI DUYEN 20195866)\textbf{ Cấu trúc mô hinh LSTM của nhóm bạn có bao nhiêu lớp, mỗi lớp có bao nhiêu nơ ron?}\\
+    Trả lời : Cấu trúc LSTM có 4 lớp và chúng tương tác với nhau. Mỗi lớp có 32 nơron.
+    
+    \item (NGUYEN THI DUYEN 20195866)\textbf{
+    Hàm kích hoạt nhóm bạn sử dụng là hàm gì? Và tại sao }\\
+    Trả lời: Hàm kích hoạt trong mô hình LSTM là 'relu'. Mục đích của sử dụng Hàm kích hoạt tuyến tính được chỉnh lưu ( ReLU) là cho phép mạng thần kinh học các phụ thuộc phi tuyến tính.
+      
+    \item (NGUYEN NGOC QUANG 20185395)\textbf{ Tại sao các bạn lại để tham số epoch là 200 ạ?}\\
+    Trả lời:
+    Để số epoch 200 là tính đến trường hợp huấn luyện mô hình đã được trang bị "early stop" \- sẽ dừng huấn luyện mô hình khi đạt đủ điều kiện đặt ra, nên số 200 là lấy số lớn cũng có thể lấy 100 hoặc 300.
+    
+    \item (NONG THI THUY 20195926)\textbf{ Mô hình bạn bảo không tốt cho lắm, thì bạn định hiệu chỉnh các tham số mô hình của VARMAx và LSTM như nào để cải thiện hiệu suất dự báo?}\\
+    Trả lời:
+Với mô hình LSTM và VARMAX thì nhóm mình chưa có xét đến trường hợp mà các thuộc tính không tương quan với nhau hay độ tương quan thấp. Nên để cải thiện mô hình mình có thể tính đến trường hợp khi dự đoán một thuộc tính nào đó thì loại bớt các thuộc tính không tương quan để giảm nhiễu cho mô hình.
+
+    \item (HOANG MY GIA HUY 20195887)\textbf{ nhóm bạn xây dựng tập train và test cho hồi quy tuyến tính như thế nào?}\\
+    Trả lời: Nhóm mình xử dụng hồi quy tuyến tính để xử lý missing data cho từng cột bằng cách xây dựng 
+    \begin{itemize}
+        \item Tập train: tất cả dòng có dữ liệu (notnull)
+        \item Tập test: các dòng bị thiếu dữ liệu (isnull)
+    \end{itemize}
+    
+    \item (HOANG MY GIA HUY 20195887)\textbf{ nhóm bạn xử lý chuỗi không dừng cho mô hình VARMAX như thế nào?}\\
+     Trả lời: Với chuỗi không dừng thì có thể biến đổi sang dừng bằng cách lấy sai phân differencing.
+  
+    \item (HOANG MY GIA HUY 20195887)\textbf{ Biến ngoại lại cho mô hình VARMAX của nhóm bạn là gì?}\\
+    Trả lời: Có nhiều cách để xác định biến ngoại lai trong mô hình VARMAX như: kiểm tra giá trị tuyệt đối của các quan sát, kiểm tra khoảng cách mahalanobis, hay sử dụng đường cong roc. 
+    \item (TRAN THI HONG VAN 20195941)\textbf{
+    Nhóm đang sử dụng hai mô hình dự báo cho đa chuỗi vậy trong quá trình dự đoán của mô hình giữa các chuỗi tương quan và các chuỗi không tương quan thì kết quả nhóm đánh giá dự đoán nào tốt hơn?}\\
+    Trả lời : Theo nhóm mình thì dự đoán chuỗi tương quan sẽ tốt hơn.
+    
+    \item (NGUYEN THI XUAN HONG 20185364)\textbf{ bạn sử dụng bn dữ liệu quá khứ để dự đoán 48h tiếp theo? và với số lượng dữ liệu quá khứ khác nhau bạn sử dụng liệu có ảnh hưởng đến kết quả b thực nghiệm k?}\\
+    Trả lời : Nhóm dùng 1000 điểm dữ liệu. Việc lấy 1000 điểm dữ liệu là do nhóm mình muốn thử với nhiều điểm dữ liệu thì liệu mô hình có được tốt. Nhưng khi huấn luyện mô hình xong nhóm mình rút ra được việc lấy nhiều dữ liệu một phần làm cho mô hình bị giảm hiệu suất khi đưa ra dự đoán.
+    
+    \item (NGUYEN LAN HUONG 20195884)\textbf{ bạn xử lý dữ liệu đầu vào như nào để mô hình nó hội tụ?}\\
+    Trả lời: Nhóm mình chỉ dùng mô hình linear regression để dự đoán các giá trị thiếu. Còn lại không xử lý gì thêm với dữ liệu.
+    
+    \item (LE VAN THAM 20195914)\textbf{
+    Theo mình biết, đầu vào của của các bạn là đa biến, liệu nhiều biến đầu vào như vậy mô hình lstm có bị nhớ nhầm chuỗi này sang chuỗi khác hay không?}\\
+    Trả lời: LSTM là phương pháp dự báo chuỗi thời gian đa biến đươc xây dựng lên để áp dụng cho chuỗi thời gian đa biến, nên mình nghĩ nó sẽ không nhớ nhầm các chuỗi với nhau.
+    \item (VU VAN XUNG 20195943)\textbf{
+    Tại sao khi dùng LSTM cho đa biến lại không khớp được mô hình?}\\
+    Trả lời:
+Theo nhóm mình thì vấn đề sử dụng LSTM chưa khớp được với mô hình là do dữ liệu vẫn chưa loại bớt các thuộc tính không tương quan, input shape đầu vào cho mô hình chưa thực sự phù hợp, các hyperparameter cũng chưa được chọn lựa và hiệu chỉnh một cách chính xác.
+
+    \item (NGUYEN THAI THINH 20195921)\textbf{
+    Các bạn có thể dựa vào kết quả để so sánh 2 phương pháp này không? Ưu nhược điểm từng pp}\\
+    Trả lời : Dựa vào kết quả ta có thể thấy VARMAX là tốt hơn LSTM trong trường hợp xây dựng mô hình của nhóm. 
+    về ưu nhược điểm của từng phương pháp:
+    \begin{itemize}
+        \item Với LSTM thì nhóm xây dựng được mô hình cho kết quả test không được khớp lắm với dữ liệu test nhưng cả MSE và RMSE đều thấp.
+        \item Với VARMAX thì cho kết quả test độ chính xác cao và khớp với bộ test nhưng lại có MSE khá cao, thời gian huấn luyện lâu.
+    \end{itemize}
+    
+    \item (BUI KHUONG DUY 20195864)\textbf{
+    Về mô hình LSTM, tính giải thích đầu ra của mô hình là gì nhỉ, bạn bỏ qua mất phần đấy}\\
+    Trả lời: Kết quả ở đầu ra sẽ dựa trên ô trạng thái, nhưng sẽ là một phiên bản được lọc. Đầu tiên, chúng ta chạy qua một tầng sigmoid nơi quyết định phần nào của ô trạng thái sẽ ở đầu ra. Sau đó, ô trạng thái được đưa qua hàm tanh (để chuyển giá trị về khoảng -1 và 1) và nhân nó với đầu ra của một cổng sigmoid, do đó chỉ trả ra phần mà chúng ta quyết định.
+    
+    \item (NGUYEN VAN DAI 20195847)\textbf{
+    Tại sao các bạn lại dùng 1000 điểm dữ liệu (tại sao lại dùng nhiều điểm dữ liệu như vậy - 1000 điểm chiếm đến 1/3 bộ dữ liệu rồi) liệu có ảnh hưởng đến hiệu suất của mô hình không}\\
+    Trả lời: Việc lấy 1000 điểm dữ liệu là do nhóm mình muốn thử xem việc lấy nhiều dữ liệu để mô hình thì liệu nó có chính xác. Nhưng khi huấn luyện mô hình xong nhóm mình rút ra được việc lấy nhiều dữ liệu một phần làm cho mô hình bị giảm hiệu suất.
+
+\end{enumerate}	
+\end{document}
